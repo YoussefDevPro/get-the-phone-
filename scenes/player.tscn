@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://difydyfyhgey8"]
+
+[ext_resource type="Texture2D" uid="uid://dulm48oalrstd" path="res://sprites/scenes/Sprite-0010.png" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://wh2h6mo34nm" path="res://sprites/scenes/Sprite-0011.png" id="2_qhqgy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_13sgg"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g2els")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qhqgy")
+}],
+"loop": true,
+"name": &"swiming deep",
+"speed": 2.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1016780585]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1155946082]
+sprite_frames = SubResource("SpriteFrames_13sgg")
+animation = &"swiming deep"
+frame_progress = 0.42765844
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1662966133]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1586298235]
+position = Vector2(11.10156, 13.749995)
+scale = Vector2(1.0156249, 1.2499999)
+polygon = PackedVector2Array(-25.7, -36.6, 13.684618, -36.6, 13.684618, 14.600004, -25.7, 14.600004)
