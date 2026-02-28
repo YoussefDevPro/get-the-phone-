@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://je85q6blb41"]
+
+[ext_resource type="Texture2D" uid="uid://ciky7qcg02upv" path="res://sprites/scenes/gameover.png" id="1_ncp31"]
+
+[node name="MarginContainer" type="MarginContainer" unique_id=444324027]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=924464021]
+layout_mode = 2
+texture = ExtResource("1_ncp31")

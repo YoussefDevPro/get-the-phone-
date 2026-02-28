@@ -1,13 +1,10 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-@onready var bg = $bg
+var time_passed := 0.0
+const CHANGE_TIME := 180.0
 
 func _process(delta: float) -> void:
-	# so uh, i think ill just do particules hehe
-	pass
+	time_passed += delta
+
+	if time_passed >= CHANGE_TIME:
+		get_tree().change_scene_to_file("res://scenes/win.tscn")

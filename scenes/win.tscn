@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://n6k6d3l3l66v"]
+
+[ext_resource type="Texture2D" uid="uid://c06rx1dv3gisy" path="res://sprites/scenes/winn.png" id="1_r4oei"]
+
+[node name="Node2D" type="Node2D" unique_id=754404974]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=782443216]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_r4oei")

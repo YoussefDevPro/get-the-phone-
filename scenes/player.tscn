@@ -5,14 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://wh2h6mo34nm" path="res://sprites/scenes/Sprite-0011.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://dff18i0ghedpq" path="res://sprites/scenes/heart_empty_like_me.png" id="3_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://ddlayabt0mpm3" path="res://sprites/scenes/heart_full.png" id="4_dqkch"]
+[ext_resource type="Script" uid="uid://c0ho6ayig3s5b" path="res://scenes/animated_sprite_2d.gd" id="6_tuyoq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_13sgg"]
 animations = [{
-"frames": [],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_g2els")
@@ -21,7 +17,7 @@ animations = [{
 "texture": ExtResource("2_qhqgy")
 }],
 "loop": true,
-"name": &"swiming deep",
+"name": &"default",
 "speed": 2.0
 }]
 
@@ -35,28 +31,27 @@ empty_heart_texture = ExtResource("3_qlg0r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1155946082]
 sprite_frames = SubResource("SpriteFrames_13sgg")
-animation = &"swiming deep"
-frame_progress = 0.5761935
+script = ExtResource("6_tuyoq")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1662966133]
+limit_left = 0
+limit_top = 0
+limit_right = 780
+limit_bottom = 440
 position_smoothing_enabled = true
 position_smoothing_speed = 30.0
 
-[node name="MarginContainer" type="MarginContainer" parent="Camera2D" unique_id=418495962]
+[node name="MarginContainer" type="CanvasLayer" parent="Camera2D" unique_id=1864556986]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/MarginContainer" unique_id=196790986]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 194.0
-offset_top = -210.0
-offset_right = 390.0
-offset_bottom = -164.0
+offset_left = -166.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = 46.0
 grow_horizontal = 0
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 30
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/MarginContainer" unique_id=196790986]
-layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Camera2D/MarginContainer/HBoxContainer" unique_id=1820177891]
 layout_mode = 2
