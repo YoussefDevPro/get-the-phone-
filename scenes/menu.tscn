@@ -9,6 +9,8 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mhnvy")
@@ -21,22 +23,20 @@ stretch_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=249487125]
 layout_mode = 2
+theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1990249087]
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=254289516]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 0
-size_flags_stretch_ratio = 7.0
-theme_override_constants/separation = 300
-alignment = 1
 
-[node name="logo" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=579999150]
+[node name="logo" type="TextureRect" parent="MarginContainer/CenterContainer" unique_id=579999150]
 layout_mode = 2
 texture = ExtResource("2_con2f")
 stretch_mode = 2
 
-[node name="start_btn" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=942756654]
+[node name="start_btn" type="TextureRect" parent="MarginContainer/CenterContainer" unique_id=942756654]
 layout_mode = 2
 texture = ExtResource("3_mhnvy")
 stretch_mode = 3
