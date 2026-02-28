@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const UP_FORCE = -200.0  # how strong can the player go up, but lets say the player is hesitating going up hehe
-const GRAVITY = 500.0 
+const GRAVITY = -100.0 
 var max_health = 7
 var health = max_health
 
@@ -15,10 +15,10 @@ func _physics_process(delta: float) -> void:
 	velocity.x = direction * SPEED
 
 	# player is always going doooown
-	velocity.y += GRAVITY * delta
+	# velocity.y += GRAVITY * delta
 	if Input.is_action_just_pressed("ui_up"):
 		velocity.y += UP_FORCE * delta 
-	velocity.y = clamp(velocity.y, -UP_FORCE, 500)
+	# velocity.y = clamp(velocity.y, -UP_FORCE, 500)
 
 	move_and_slide()
 	

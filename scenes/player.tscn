@@ -36,7 +36,7 @@ empty_heart_texture = ExtResource("3_qlg0r")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1155946082]
 sprite_frames = SubResource("SpriteFrames_13sgg")
 animation = &"swiming deep"
-frame_progress = 0.8499173
+frame_progress = 0.5761935
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1662966133]
 position_smoothing_enabled = true

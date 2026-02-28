@@ -4,16 +4,26 @@
 [ext_resource type="Script" uid="uid://k01nmltirw8f" path="res://scenes/game.gd" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://b1vtfkwu0iggm" path="res://sprites/scenes/bubbles_owo.png" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://difydyfyhgey8" path="res://scenes/player.tscn" id="4_iywne"]
+[ext_resource type="Script" uid="uid://b4h7tqs6ljgus" path="res://scenes/enemy_spawner.gd" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://dlj7opb64clkv" path="res://scenes/fishhh.tscn" id="5_p57ef"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lnu2h"]
 particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -1899.97, 0)
+emission_shape_scale = Vector3(5000, 3000, 1)
+emission_shape = 1
+emission_sphere_radius = 1.0
 direction = Vector3(1, -1, 0)
-initial_velocity_min = 150.0
-initial_velocity_max = 250.0
+spread = 162.84
+initial_velocity_min = 449.63
+initial_velocity_max = 549.63
 gravity = Vector3(0, 0, 0)
-tangential_accel_min = -60.0
-tangential_accel_max = 59.999996
+tangential_accel_min = -100.0
+tangential_accel_max = 99.99999
+scale_min = 0.14999999
+scale_max = 1.4499999
+scale_over_velocity_min = 352.06
+scale_over_velocity_max = 666.67
 
 [node name="Node2D" type="Node2D" unique_id=1895301747]
 script = ExtResource("1_yqjtg")
@@ -22,9 +32,9 @@ script = ExtResource("1_yqjtg")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -210.0
-offset_right = 1000.0
-offset_bottom = 790.0
+offset_top = 14.0
+offset_right = 784.0
+offset_bottom = 432.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_uwrxv")
@@ -33,12 +43,17 @@ stretch_mode = 1
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1848417722]
 position = Vector2(390, 420)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
+amount = 50
 texture = ExtResource("3_lnu2h")
+visibility_rect = Rect2(1000, -1000, 1000, 1000)
 process_material = SubResource("ParticleProcessMaterial_lnu2h")
 
 [node name="CharacterBody2D" parent="." unique_id=1016780585 instance=ExtResource("4_iywne")]
 position = Vector2(392, 224)
+motion_mode = 1
 
-[node name="CharacterBody2D2" parent="." unique_id=559685731 instance=ExtResource("5_p57ef")]
-position = Vector2(392, 304)
+[node name="Node2D" type="Node2D" parent="." unique_id=1017224086]
+script = ExtResource("5_iywne")
+fish_scene = ExtResource("5_p57ef")
+spawn_interval = 6.0
