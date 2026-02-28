@@ -7,9 +7,6 @@ func _ready() -> void:
 
 
 @onready var bg = $bg
-@onready var gb = $gb
-var speed = 200
-var height = 210
 
 func _process(delta: float) -> void:
 	# so uh, i think ill just do particules hehe

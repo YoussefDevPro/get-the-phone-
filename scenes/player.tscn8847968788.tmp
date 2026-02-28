@@ -25,9 +25,6 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
-size = Vector2(44, 64)
-
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1016780585]
 script = ExtResource("1_qhqgy")
 full_heart_texture = ExtResource("4_dqkch")
@@ -36,67 +33,66 @@ empty_heart_texture = ExtResource("3_qlg0r")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1155946082]
 sprite_frames = SubResource("SpriteFrames_13sgg")
 animation = &"swiming deep"
-frame_progress = 0.8499173
+frame_progress = 0.6248111
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1662966133]
 position_smoothing_enabled = true
 position_smoothing_speed = 30.0
 
-[node name="MarginContainer" type="MarginContainer" parent="Camera2D" unique_id=418495962]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1586298235]
+position = Vector2(11.10156, 13.749995)
+scale = Vector2(1.0156249, 1.2499999)
+polygon = PackedVector2Array(-25.7, -36.6, 13.684618, -36.6, 13.684618, 14.600004, -25.7, 14.600004)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=607853458]
+offset = Vector2(-390, -210)
+transform = Transform2D(1, 0, 0, 1, -390, -210)
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=418495962]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 194.0
-offset_top = -210.0
-offset_right = 390.0
-offset_bottom = -164.0
+offset_left = -136.0
+offset_bottom = 16.0
 grow_horizontal = 0
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/MarginContainer" unique_id=196790986]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=196790986]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Camera2D/MarginContainer/HBoxContainer" unique_id=1820177891]
-layout_mode = 2
-texture = ExtResource("4_dqkch")
-stretch_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Camera2D/MarginContainer/HBoxContainer" unique_id=466107487]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1820177891]
 layout_mode = 2
 texture = ExtResource("4_dqkch")
 stretch_mode = 2
 
-[node name="TextureRect3" type="TextureRect" parent="Camera2D/MarginContainer/HBoxContainer" unique_id=1061898079]
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=466107487]
 layout_mode = 2
 texture = ExtResource("4_dqkch")
 stretch_mode = 2
 
-[node name="TextureRect4" type="TextureRect" parent="Camera2D/MarginContainer/HBoxContainer" unique_id=703399460]
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1061898079]
 layout_mode = 2
 texture = ExtResource("4_dqkch")
 stretch_mode = 2
 
-[node name="TextureRect5" type="TextureRect" parent="Camera2D/MarginContainer/HBoxContainer" unique_id=1467581603]
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=703399460]
 layout_mode = 2
 texture = ExtResource("4_dqkch")
 stretch_mode = 2
 
-[node name="TextureRect6" type="TextureRect" parent="Camera2D/MarginContainer/HBoxContainer" unique_id=1259508229]
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1467581603]
 layout_mode = 2
 texture = ExtResource("4_dqkch")
 stretch_mode = 2
 
-[node name="TextureRect7" type="TextureRect" parent="Camera2D/MarginContainer/HBoxContainer" unique_id=1038875164]
+[node name="TextureRect6" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1259508229]
 layout_mode = 2
 texture = ExtResource("4_dqkch")
 stretch_mode = 2
 
-[node name="Area2D" type="Area2D" parent="." unique_id=785238418]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1786038292]
-position = Vector2(2, 0)
-shape = SubResource("RectangleShape2D_qlg0r")
-
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[node name="TextureRect7" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1038875164]
+layout_mode = 2
+texture = ExtResource("4_dqkch")
+stretch_mode = 2
